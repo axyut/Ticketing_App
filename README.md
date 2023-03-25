@@ -106,16 +106,17 @@ Visit http://<minikube_ip>:Nodeport/
 1.  [Go to Website]()
 
 Overview of how the services interact with eachother.
-<img src="readme/page4.png" width="400" title="WEB Page">
+
+<p><img src="readme/page4.png" width="400" title="WEB Page"> </p>
 
 <p style="display:flex;" >
-<img src="readme/page1.png" width="200" title="WEB Page">
-<img src="readme/page2.png" width="200" title="WEB Page">
-<img src="readme/page3.png" width="200" title="WEB Page">
-<img src="readme/page5.png" width="200" title="WEB Page">
-<img src="readme/page6.png" width="200" title="WEB Page">
-<img src="readme/page7.png" width="200" title="WEB Page">
-<img src="readme/page8.png" width="200" title="WEB Page">
+<img src="readme/page1.png" width="300" title="WEB Page">
+<img src="readme/page2.png" width="300" title="WEB Page">
+<img src="readme/page3.png" width="300" title="WEB Page">
+<img src="readme/page5.png" width="300" title="WEB Page">
+<img src="readme/page6.png" width="300" title="WEB Page">
+<img src="readme/page7.png" width="300" title="WEB Page">
+<img src="readme/page8.png" width="300" title="WEB Page">
 </p>
 
 2.  Post any ticket
