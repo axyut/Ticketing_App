@@ -105,7 +105,7 @@ Visit http://<minikube_ip>:Nodeport/
 
 1.  [Go to Website]()
 
-        Overview of what I'm trying to create.
+Overview of what I'm trying to create.
 
     <p >
       <img src="readme/page1.png" width="400" title="WEB Page">
@@ -117,6 +117,25 @@ Visit http://<minikube_ip>:Nodeport/
       <img src="readme/page8.png" width="400" title="WEB Page">
     </p>
 
-2.  Post any post
+2.  Post any ticket
 
-3.  Post any comment
+3.  Buy any ticket
+
+<!--
+
+starting with typescript
+npm i typescript ts-node-dev express @types/express
+-- tsc --init
+-- npm script, start : ts-node-dev src/index.ts
+-- setting up Dockerfile, .dockerignore
+-- building docker image
+-- setting up auth-depl with auth-srv
+-- starting minikube
+-- setting up skaffold.yaml in root
+-- adding ingress controller   (minikube addons enable ingress)
+-- setting up ingress-srv
+-- editing hosts vim /etc/hosts
+
+
+
+-->
