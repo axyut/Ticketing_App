@@ -1,4 +1,0 @@
-TICKETING APP
-Users can list a ticket for an event (concert, sports) for sale. Other users can purchase this event ticket. The user who is posting can buy his own ticket as well. When a user attempts to purchase a ticket, the ticket is "locked" for 15 minutes. The user has 15 minutes to enter their payment info. While locked no other users can pruchase that particular ticket. After 15 minutes, the ticket will either be unlocked or sold right after payment verification.
-Ticket price can be edited if not locked.
- Use cases: Events, Concerts, Sport, Cinema hall
