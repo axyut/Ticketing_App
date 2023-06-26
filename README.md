@@ -8,13 +8,16 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Working](#working)
+-   [Table of Contents](#table-of-contents)
+-   [About The Project](#about-the-project)
+    -   [Built With](#built-with)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+-   [without Skaffold](#without-skaffold)
+-   [with Skaffold](#with-skaffold)
+-   [Local Server](#local-server)
+-   [Working](#working)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -26,13 +29,13 @@ Users can list a ticket for an event (concert, sports) for sale. Other users can
 
 This project is build with following languages and framework
 
-- [React](https://html.com)
-- [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Node](https://www.javascript.com/)
-- [Axios](https://www.javascript.com/)
-- [Concurrently](https://www.javascript.com/)
-- [Vite](https://www.javascript.com/)
-- [Docker](https://www.javascript.com/)
+-   [React](https://html.com)
+-   [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
+-   [Node](https://www.javascript.com/)
+-   [Axios](https://www.javascript.com/)
+-   [Concurrently](https://www.javascript.com/)
+-   [Vite](https://www.javascript.com/)
+-   [Docker](https://www.javascript.com/)
 
 <!-- GETTING STARTED -->
 
@@ -43,11 +46,11 @@ To get a local copy up and running follow these simple example steps. If this al
 
 ### Prerequisites
 
-- Text editor
-- Docker
-- Kubernetes
-- minikube
-- skaffold
+-   Text editor
+-   Docker
+-   Kubernetes
+-   minikube
+-   skaffold
 
 ### Installation
 
@@ -61,6 +64,8 @@ To get a local copy up and running follow these simple example steps. If this al
    cd ticket_booking_app
 ```
 
+## without Skaffold
+
 4. Dockerize each service
 
 ```sh
@@ -73,16 +78,18 @@ To get a local copy up and running follow these simple example steps. If this al
    minikube start --driver=docker
 ```
 
-## without Skaffold
-
 6. Apply deployment configs
 
 ```sh
    cd /infra/k8s
-   kubectl apply -y .
+   kubectl apply -f .
 ```
 
 ## with Skaffold
+
+```
+   minikube start --driver=docker --addons ingress
+```
 
 Start skaffold developemnt environment and track file changes automatically.
 
@@ -138,7 +145,8 @@ npm i typescript ts-node-dev express @types/express
 -- setting up ingress-srv
 -- editing hosts vim /etc/hosts
 
-
+starting after long time
+minikube start --driver=docker -p ticket --addons ingress
 
 -->
 <!--

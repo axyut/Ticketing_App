@@ -19,9 +19,14 @@ app.use(signInRouter);
 app.use(signOutRouter);
 app.use(signUpRouter);
 
+// temp test
+app.get("/", (req, res) => {
+	res.send("HOME");
+});
+
 // Error 404
 app.all("*", async (req, res) => {
-  throw new NotFoundError();
+	throw new NotFoundError();
 });
 
 // Error handling
@@ -29,5 +34,5 @@ app.use(errorHandler);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Listening at http://auth-srv:${PORT}`);
+	console.log(`Listening at http://auth-srv:${PORT}`);
 });
