@@ -1,0 +1,25 @@
+{
+  "name": "ticket_booking_app",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\"><a href=\"https://github.com/axyut/posting_app_microservice_nodejs\">Ticket Booking App</a></h1>",
+  "main": "index.js",
+  "scripts": {
+    "auth": "cd ./auth && npm start",
+    "start": "concurrently -n \"auth\" -c \"bgBlue.bold\" \"npm run auth\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axyut/ticket_booking_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axyut/ticket_booking_app/issues"
+  },
+  "homepage": "https://github.com/axyut/ticket_booking_app#readme",
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
