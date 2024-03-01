@@ -2,6 +2,7 @@ import express from "express";
 import "express-async-errors";
 import mongoose from "mongoose";
 import "dotenv/config"
+import cookieSession from "cookie-session"
 
 import { currentUserRouter } from "./routes/current-user";
 import { signInRouter } from "./routes/signin";
@@ -12,6 +13,11 @@ import { NotFoundError } from "./errors/not-found-error";
 
 
 const app = express();
+app.set('trust proxy', true) // for ingress proxy
+app.use(cookieSession({
+  signed: false,
+  //secure: true // only work in https 
+}))
 
 // bodyparser
 app.use(express.json()); //Used to parse JSON bodies

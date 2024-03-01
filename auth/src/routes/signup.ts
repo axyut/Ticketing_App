@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express";
 import { body, validationResult } from "express-validator";
+import jwt from 'jsonwebtoken'
+
 import { DatabaseConnectionError } from "../errors/database-error";
 import { RequestValidationError } from "../errors/request-validation-error";
 import { User } from "../models/User";
@@ -24,25 +26,28 @@ router.post(
       throw new RequestValidationError(errors.array());
     }
 
-    try {
-      const userExists = await User.findOne({ email })
-      if (userExists) {
-        throw new BadRequestError("Email in Use.")
-      }
-      const user = User.build({
-        email, password
-      })
-      const newUser = await user.save()
-      console.log("New user created.")
-      res.send({
-        email: newUser.email,
-        id: newUser._id
-      })
-
-    } catch (error) {
-      console.log(error);
-      throw new DatabaseConnectionError()
+    const userExists = await User.findOne({ email })
+    if (userExists) {
+      throw new BadRequestError("Email in Use.")
     }
+    const user = User.build({
+      email, password
+    })
+    const newUser = await user.save()
+    console.log("New user created.")
+
+    // handle jwt
+    const userJwt = jwt.sign({
+      id: newUser._id,
+      email: newUser.email
+    }, process.env.JWT_PASS as string)
+    req.session = {
+      userJwt
+    }
+    res.send({
+      email: newUser.email,
+      id: newUser._id
+    })
   }
 );
 
