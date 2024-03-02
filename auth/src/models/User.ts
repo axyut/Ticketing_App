@@ -30,6 +30,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   }
+}, {
+  toJSON: {  // edit how the return json obj will look for consistency
+    transform(doc, ret) {
+      ret.id = ret._id;
+      delete ret._id;
+      delete ret.password;
+      delete ret.__v;
+    }
+  }// note: we'll have these properties _id, __v etc, but transformed only when being converted to json
 });
 
 userSchema.pre('save', async function(done) {

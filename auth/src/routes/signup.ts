@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import { DatabaseConnectionError } from "../errors/database-error";
 import { RequestValidationError } from "../errors/request-validation-error";
 import { User } from "../models/User";
-import { BadRequestError } from "../errors/bad-request";
+import { BadRequestError } from "../errors/bad-request-error";
 
 const router = express.Router();
 
@@ -38,16 +38,14 @@ router.post(
 
     // handle jwt
     const userJwt = jwt.sign({
-      id: newUser._id,
+      id: newUser.id,
       email: newUser.email
     }, process.env.JWT_PASS as string)
     req.session = {
-      userJwt
+      jwt: userJwt
     }
-    res.send({
-      email: newUser.email,
-      id: newUser._id
-    })
+    res.send(newUser)
+
   }
 );
 

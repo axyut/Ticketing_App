@@ -148,6 +148,22 @@ npm i typescript ts-node-dev express @types/express
 starting after long time
 minikube start --driver=docker -p ticket --addons ingress
 
+## creating a secret
+$ kubectl create secret generic [name of secret] --from-literal=[key]=[value]
+example -> kubectl create secret generic jwt-secret --from-literal=JWT_PASS=averylongandgoodkey
+## see all
+$ kubectl get secrets
+## get secrets into pod, config in depl file
+`
+- name:
+  image:
+  env:
+  - name: JWT_PASS
+      valueFrom:
+        secretKeyRef:
+          name: jwt-secret
+          key: JWT_PASS
+`
 -->
 <!--
 ######## Connecting with google cloud with skaffold

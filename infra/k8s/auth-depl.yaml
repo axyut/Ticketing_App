@@ -15,6 +15,12 @@ spec:
       containers:
         - name: auth
           image: axyut/auth
+          env:
+          - name: JWT_PASS
+            valueFrom:
+              secretKeyRef:
+                name: jwt-secret
+                key: JWT_PASS
 ---
 apiVersion: v1
 kind: Service
