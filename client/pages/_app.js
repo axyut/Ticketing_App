@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
-import buildClient from "../api/build-client";
 import Header from "../components/header";
+import axios from "axios";
 
 const AppComponent = ({ Component, pageProps, currentUser }) => {
   return (
@@ -11,19 +11,21 @@ const AppComponent = ({ Component, pageProps, currentUser }) => {
   );
 };
 
-AppComponent.getInitialProps = async (appContext) => {
-  const client = buildClient(appContext.ctx);
-  const { data } = await client.get("/api/users/currentuser");
+// AppComponent.getInitialProps = async (appContext) => {
+//   const { data } = await axios.get(
+//     "http://localhost:3000/api/users/currentuser"
+//   );
+//   console.log(data);
 
-  let pageProps = {};
-  if (appContext.Component.getInitialProps) {
-    pageProps = await appContext.Component.getInitialProps(appContext.ctx);
-  }
+//   let pageProps = {};
+//   if (appContext.Component.getInitialProps) {
+//     pageProps = await appContext.Component.getInitialProps(appContext.ctx);
+//   }
 
-  return {
-    pageProps,
-    ...data,
-  };
-};
+//   return {
+//     pageProps,
+//     ...data,
+//   };
+// };
 
 export default AppComponent;

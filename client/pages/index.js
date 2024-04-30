@@ -1,6 +1,8 @@
-import buildClient from "../api/build-client";
+import axios from "axios";
 
 const LandingPage = ({ currentUser }) => {
+  // console.log(currentUser);
+  axios.get("http://localhost:3000/api/users/currentuser");
   return currentUser ? (
     <h1>You are signed in</h1>
   ) : (
@@ -8,12 +10,14 @@ const LandingPage = ({ currentUser }) => {
   );
 };
 
-LandingPage.getInitialProps = async (context) => {
-  console.log("LANDING PAGE!");
-  const client = buildClient(context);
-  const { data } = await client.get("/api/users/currentuser");
-
-  return data;
-};
+// LandingPage.getInitialProps = async () => {
+//   console.log("LANDING PAGE!");
+//   // request being sent has no cookies attached to it because it is being sent from the server
+//   const { data } = await axios.get(
+//     "http://localhost:3000/api/users/currentuser"
+//   );
+//   console.log(data);
+//   return data;
+// };
 
 export default LandingPage;

@@ -3,6 +3,7 @@ import "express-async-errors";
 import mongoose from "mongoose";
 import "dotenv/config";
 import cookieSession from "cookie-session";
+import cors from "cors";
 
 import { currentUserRouter } from "./routes/current-user";
 import { signInRouter } from "./routes/signin";
@@ -13,6 +14,11 @@ import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
 app.set("trust proxy", true); // for ingress proxy
+const corsOptions = {
+  origin: "http://localhost:3001",
+  credentials: true,
+};
+app.use(cors());
 app.use(
   cookieSession({
     signed: false,
