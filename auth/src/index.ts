@@ -62,7 +62,7 @@ const start = async () => {
   }
 
   app.listen(PORT, () => {
-    console.log(`Listening at http://auth-srv:${PORT}`);
+    console.log(`Listening at http://localhost:${PORT}`);
   });
 };
 
