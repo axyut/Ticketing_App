@@ -1,8 +1,8 @@
 import express from "express";
 import "express-async-errors";
 import mongoose from "mongoose";
-import "dotenv/config"
-import cookieSession from "cookie-session"
+import "dotenv/config";
+import cookieSession from "cookie-session";
 
 import { currentUserRouter } from "./routes/current-user";
 import { signInRouter } from "./routes/signin";
@@ -11,13 +11,14 @@ import { signUpRouter } from "./routes/signup";
 import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
-
 const app = express();
-app.set('trust proxy', true) // for ingress proxy
-app.use(cookieSession({
-  signed: false,
-  //secure: true // only work in https 
-}))
+app.set("trust proxy", true); // for ingress proxy
+app.use(
+  cookieSession({
+    signed: false,
+    //secure: true // only work in https
+  })
+);
 
 // bodyparser
 app.use(express.json()); //Used to parse JSON bodies
@@ -43,19 +44,26 @@ app.all("*", async (req, res) => {
 app.use(errorHandler);
 const start = async () => {
   const PORT = 3000;
-  const username = process.env.mongo_USER
-  const pass = process.env.mongo_PASS
-  const db_name = process.env.mongo_DB_NAME
+  const username = process.env.mongo_USER;
+  const pass = process.env.mongo_PASS;
+  const db_name = process.env.mongo_DB_NAME;
   try {
-    const connection = await mongoose.connect(`mongodb+srv://${username}:${pass}@newcluster.zcb8pse.mongodb.net/${db_name}`)
-    console.log("Successfully connected to DB.", connection.connection.name, connection.connection.host, connection.connection.port)
+    const connection = await mongoose.connect(
+      `mongodb+srv://${username}:${pass}@newcluster.zcb8pse.mongodb.net/${db_name}`
+    );
+    console.log(
+      "Successfully connected to DB.",
+      connection.connection.name,
+      connection.connection.host,
+      connection.connection.port
+    );
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 
   app.listen(PORT, () => {
     console.log(`Listening at http://auth-srv:${PORT}`);
   });
-}
+};
 
 start();
