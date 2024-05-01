@@ -6,7 +6,8 @@
   "scripts": {
     "auth": "cd ./auth && npm start",
     "client": "cd ./client && npm run dev",
-    "start": "concurrently -n \" auth , client \" -c \"bgBlue.bold,bgGreen.bold\" \"npm run auth\" \"npm run client\"",
+    "tickets": "cd ./tickets && npm start",
+    "start": "concurrently -n \" auth , client , tickets \" -c \"bgBlue.bold,bgGreen.bold,bgWhite.bold\" \"npm run auth\" \"npm run client\" \"npm run tickets\"",
     "install": "concurrently   \"cd ./client && npm install\" \"cd ./common && npm install\" \"cd ./auth && npm install\"  \"cd ./payments && npm install\"  \"cd ./expiration && npm install\"  \"cd ./orders && npm install\"  \"cd ./tickets && npm install\""
   },
   "repository": {
