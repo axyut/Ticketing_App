@@ -8,16 +8,16 @@
 
 ## Table of Contents
 
--   [Table of Contents](#table-of-contents)
--   [About The Project](#about-the-project)
-    -   [Built With](#built-with)
--   [Getting Started](#getting-started)
-    -   [Prerequisites](#prerequisites)
-    -   [Installation](#installation)
--   [without Skaffold](#without-skaffold)
--   [with Skaffold](#with-skaffold)
--   [Local Server](#local-server)
--   [Working](#working)
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [without Skaffold](#without-skaffold)
+- [with Skaffold](#with-skaffold)
+- [Local Server](#local-server)
+- [Working](#working)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -29,13 +29,13 @@ Users can list a ticket for an event (concert, sports) for sale. Other users can
 
 This project is build with following languages and framework
 
--   [React](https://html.com)
--   [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
--   [Node](https://www.javascript.com/)
--   [Axios](https://www.javascript.com/)
--   [Concurrently](https://www.javascript.com/)
--   [Vite](https://www.javascript.com/)
--   [Docker](https://www.javascript.com/)
+- [React](https://html.com)
+- [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Node](https://www.javascript.com/)
+- [Axios](https://www.javascript.com/)
+- [Concurrently](https://www.javascript.com/)
+- [Vite](https://www.javascript.com/)
+- [Docker](https://www.javascript.com/)
 
 <!-- GETTING STARTED -->
 
@@ -46,11 +46,11 @@ To get a local copy up and running follow these simple example steps. If this al
 
 ### Prerequisites
 
--   Text editor
--   Docker
--   Kubernetes
--   minikube
--   skaffold
+- Text editor
+- Docker
+- Kubernetes
+- minikube
+- skaffold
 
 ### Installation
 
@@ -114,16 +114,16 @@ Visit http://<minikube_ip>:Nodeport/
 
 Overview of how the services interact with eachother.
 
-<p><img src="readme/page4.png" width="400" title="WEB Page"> </p>
+<p><img src="assets/page4.png" width="400" title="WEB Page"> </p>
 
 <p style="display:flex;" >
-<img src="readme/page1.png" width="300" title="WEB Page">
-<img src="readme/page2.png" width="300" title="WEB Page">
-<img src="readme/page3.png" width="300" title="WEB Page">
-<img src="readme/page5.png" width="300" title="WEB Page">
-<img src="readme/page6.png" width="300" title="WEB Page">
-<img src="readme/page7.png" width="300" title="WEB Page">
-<img src="readme/page8.png" width="300" title="WEB Page">
+<img src="assets/page1.png" width="300" title="WEB Page">
+<img src="assets/page2.png" width="300" title="WEB Page">
+<img src="assets/page3.png" width="300" title="WEB Page">
+<img src="assets/page5.png" width="300" title="WEB Page">
+<img src="assets/page6.png" width="300" title="WEB Page">
+<img src="assets/page7.png" width="300" title="WEB Page">
+<img src="assets/page8.png" width="300" title="WEB Page">
 </p>
 
 2.  Post any ticket

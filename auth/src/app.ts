@@ -2,6 +2,7 @@ import express from "express";
 import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
+import cors from "cors";
 
 import { currentUserRouter } from "./routes/current-user";
 import { signInRouter } from "./routes/signin";
@@ -11,13 +12,13 @@ import { errorHandler, NotFoundError } from "@chillarcs/common";
 
 const app = express();
 app.set("trust proxy", true);
+const corsOptions = {
+  origin: "http://localhost:3001",
+  credentials: true,
+};
+app.use(cors(corsOptions));
 app.use(json());
-app.use(
-  cookieSession({
-    signed: false,
-    secure: process.env.NODE_ENV !== "test",
-  })
-);
+app.use(cookieSession({ signed: false, secure: false }));
 
 app.use(currentUserRouter);
 app.use(signInRouter);

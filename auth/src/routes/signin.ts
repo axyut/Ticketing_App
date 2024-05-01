@@ -42,10 +42,11 @@ router.post(
       },
       process.env.JWT_PASS!
     );
+
     req.session = {
       jwt: userJwt,
     };
-
+    console.log(`User ${existingUser.email} signed in successfully`);
     res.status(200).send(existingUser);
   }
 );
