@@ -119,7 +119,7 @@ Visit http://<minikube_ip>:Nodeport/
 ```
 
 1. Start NATS Server
-   `nats-streaming-server -p 4222 -m 8222`. It is officially deprecated but still works. Use Jetstream instead. Connect to server with npm library `node-nats-streaming`.
+   `❯ nats-streaming-server -cid ticketing -hbi 5s -hbt 5s -hbf 2 -SD -m 8222`. It is officially deprecated but still works. Use Jetstream instead. Connect to server with npm library `node-nats-streaming`.
 1. Start Redis Server
    `redis-server`
 1. Start MongoDB

@@ -5,13 +5,15 @@
     "main": "index.js",
     "scripts": {
         "publish": "ts-node-dev --notify false src/publisher.ts",
-        "listen": "ts-node-dev --notify false src/listener.ts"
+        "listen": "ts-node-dev --notify false src/listener.ts",
+        "start": "concurrently -n \"Listener,Publisher\" -c \"bgBlack,bgGreen\" \"npm:listen\" \"npm:publish\""
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "@types/node": "^20.12.11",
+        "concurrently": "^8.2.2",
         "node-nats-streaming": "^0.3.2",
         "ts-node-dev": "^2.0.0",
         "typescript": "^5.4.5"
