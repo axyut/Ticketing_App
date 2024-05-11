@@ -1,27 +1,27 @@
 {
-  "name": "ticket_booking_app",
-  "version": "1.0.0",
-  "description": "<h1 align=\"center\"><a href=\"https://github.com/axyut/posting_app_microservice_nodejs\">Ticket Booking App</a></h1>",
-  "main": "index.js",
-  "scripts": {
-    "auth": "cd ./auth && npm start",
-    "client": "cd ./client && npm run dev",
-    "tickets": "cd ./tickets && npm start",
-    "start": "concurrently -n \" auth , client , tickets \" -c \"bgBlue.bold,bgGreen.bold,bgWhite.bold\" \"npm run auth\" \"npm run client\" \"npm run tickets\"",
-    "install": "concurrently   \"cd ./client && npm install\" \"cd ./common && npm install\" \"cd ./auth && npm install\"  \"cd ./payments && npm install\"  \"cd ./expiration && npm install\"  \"cd ./orders && npm install\"  \"cd ./tickets && npm install\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/axyut/ticket_booking_app.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/axyut/ticket_booking_app/issues"
-  },
-  "homepage": "https://github.com/axyut/ticket_booking_app#readme",
-  "dependencies": {
-    "concurrently": "^8.2.0"
-  }
+    "name": "ticket_booking_app",
+    "version": "1.0.0",
+    "description": "<h1 align=\"center\"><a href=\"https://github.com/axyut/posting_app_microservice_nodejs\">Ticket Booking App</a></h1>",
+    "main": "index.js",
+    "scripts": {
+        "auth": "cd ./auth && npm start",
+        "client": "cd ./client && npm run dev",
+        "tickets": "cd ./tickets && npm start",
+        "start": "concurrently -n \" auth , client , tickets \" -c \"bgBlue,bgGreen,bgBlack.bold\" \"npm run auth\" \"npm run client\" \"npm run tickets\" -p \"{index}-{name}-{time}-{pid}\"",
+        "install": "concurrently   \"cd ./client && npm install\" \"cd ./common && npm install\" \"cd ./auth && npm install\"  \"cd ./payments && npm install\"  \"cd ./expiration && npm install\"  \"cd ./orders && npm install\"  \"cd ./tickets && npm install\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/axyut/ticket_booking_app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/axyut/ticket_booking_app/issues"
+    },
+    "homepage": "https://github.com/axyut/ticket_booking_app#readme",
+    "dependencies": {
+        "concurrently": "^8.2.0"
+    }
 }

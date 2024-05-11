@@ -8,16 +8,16 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [About The Project](#about-the-project)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [without Skaffold](#without-skaffold)
-- [with Skaffold](#with-skaffold)
-- [Local Server](#local-server)
-- [Working](#working)
+-   [Table of Contents](#table-of-contents)
+-   [About The Project](#about-the-project)
+    -   [Built With](#built-with)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+-   [without Skaffold](#without-skaffold)
+-   [with Skaffold](#with-skaffold)
+-   [Local Server](#local-server)
+-   [Working](#working)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -29,13 +29,15 @@ Users can list a ticket for an event (concert, sports) for sale. Other users can
 
 This project is build with following languages and framework
 
-- [React](https://html.com)
-- [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
-- [Node](https://www.javascript.com/)
-- [Axios](https://www.javascript.com/)
-- [Concurrently](https://www.javascript.com/)
-- [Vite](https://www.javascript.com/)
-- [Docker](https://www.javascript.com/)
+-   [NextJS](https://developer.mozilla.org/en-US/docs/Web/HTML)
+-   [Express](https://developer.mozilla.org/en-US/docs/Web/CSS)
+-   [Concurrently](https://www.javascript.com/)
+-   [Docker](https://www.javascript.com/)
+-   [Kubernetes](https://www.javascript.com/)
+-   [Skaffold](https://www.javascript.com/)
+-   [Redis](https://www.javascript.com/)
+-   [MongoDB](https://www.javascript.com/)
+-   [NATS-Streaming-Server](https://nats-io.gitbook.io/legacy-nats-docs/nats-streaming-server-aka-stan)
 
 <!-- GETTING STARTED -->
 
@@ -46,11 +48,11 @@ To get a local copy up and running follow these simple example steps. If this al
 
 ### Prerequisites
 
-- Text editor
-- Docker
-- Kubernetes
-- minikube
-- skaffold
+-   Text editor
+-   Docker
+-   Kubernetes
+-   minikube
+-   skaffold
 
 ### Installation
 
@@ -105,6 +107,27 @@ Visit http://<minikube_ip>:Nodeport/
    minikube ip  (shows minikube_ip)
    kubectl get svc (shows Nodeport of posts-srv)
 ```
+
+## Without Docker (Everything in local)
+
+1. Install [NATS Streaming Server](https://github.com/nats-io/nats-streaming-server/releases)
+
+```bash
+// install from source, deb packages, or docker or go install
+❯ go install github.com/nats-io/nats-streaming-server@latest
+❯ nats-streaming-server
+```
+
+1. Start NATS Server
+   `nats-streaming-server -p 4222 -m 8222`. It is officially deprecated but still works. Use Jetstream instead. Connect to server with npm library `node-nats-streaming`.
+1. Start Redis Server
+   `redis-server`
+1. Start MongoDB
+   `mongod`
+1. Install dependencies
+   `npm i`
+1. Start each service
+   `npm start`
 
 <!--Working-->
 
