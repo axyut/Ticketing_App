@@ -5,7 +5,7 @@ import { OrderCreatedListener } from "./events/listeners/order-created-listener"
 import { OrderCancelledListener } from "./events/listeners/order-cancelled-listener";
 import { app } from "./app";
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3004;
 const username = process.env.mongo_USER!;
 const pass = process.env.mongo_PASS!;
 const db_name = process.env.mongo_DB_NAME || "ticketing_ticketsDB";
